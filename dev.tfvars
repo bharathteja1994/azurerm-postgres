@@ -1,0 +1,5 @@
+resource_group_name = "my-resource-group"
+location = "East US"
+postgresql_server_name = "my-postgresql-server"
+administrator_login = "myadmin"
+database_name = "mydatabase"
