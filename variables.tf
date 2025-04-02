@@ -50,8 +50,8 @@ variable "storage_mb" {
 
 variable "ssl_enforcement" {
   description = "Enable SSL enforcement."
-  type        = string
-  default     = "Enabled"
+  type        = bool
+  default     = true
 }
 
 variable "backup_retention_days" {
@@ -62,14 +62,32 @@ variable "backup_retention_days" {
 
 variable "geo_redundant_backup" {
   description = "Enable geo-redundant backups."
-  type        = string
-  default     = "Disabled"
+  type        = bool
+  default     = false
 }
 
 variable "auto_grow" {
   description = "Enable auto grow for storage."
+  type        = bool
+  default     = true
+}
+
+variable "public_network_access" {
+  description = "Allow public network access."
+  type        = bool
+  default     = true
+}
+
+variable "infrastructure_encryption" {
+  description = "Enable infrastructure encryption."
+  type        = bool
+  default     = false
+}
+
+variable "create_mode" {
+  description = "The creation mode."
   type        = string
-  default     = "Enabled"
+  default     = "Default"
 }
 
 variable "database_name" {
@@ -87,4 +105,28 @@ variable "collation" {
   description = "The collation for the database."
   type        = string
   default     = "English_United States.1252"
+}
+
+variable "threat_detection_enabled" {
+  description = "Enable threat detection policy."
+  type        = bool
+  default     = false
+}
+
+variable "email_account_admins" {
+  description = "Email account administrators when alerts are triggered."
+  type        = bool
+  default     = false
+}
+
+variable "email_addresses" {
+  description = "List of email addresses for alerts."
+  type        = list(string)
+  default     = []
+}
+
+variable "threat_detection_retention_days" {
+  description = "Number of days to keep threat detection logs."
+  type        = number
+  default     = 30
 }
