@@ -28,10 +28,10 @@ resource "azurerm_postgresql_flexible_server" "example" {
 
   private_dns_zone_id = azurerm_private_dns_zone.example.id
 
-  data_encryption {
-    type = "UserAssigned"
-    key_vault_key_id = var.key_vault_key_id
-  }
+  #data_encryption {
+  #  type = "UserAssigned"
+  #  key_vault_key_id = var.key_vault_key_id
+  #}
 }
 
 resource "azurerm_user_assigned_identity" "example" {
